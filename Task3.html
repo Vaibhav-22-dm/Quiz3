@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Quiz 3</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+            padding: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+
+
+        #Q1, #Q2, #Q3, #Q4, #Q5{
+            display: flex;
+            flex-direction: column;
+            padding: 2vw;
+            justify-content: space-around;
+
+        }
+
+        .container{
+            display: flex;
+            width: 35vw;
+            flex-direction: column;
+            margin: auto;
+            margin-top: 15vw;
+            background-color: rgb(248, 148, 235);
+            box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+            height: 50vh;
+            border-radius: 20px;
+        }
+
+        #Q1, #Q2, #Q3, #Q4, #Q5{
+            display: none;
+
+        }
+
+       
+
+        button{
+            width: 10vw;
+            border-radius: 20px;
+            color: white;
+            background: blue;
+            padding: 10px 2vw;
+            align-content: center;
+            border: none;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        }
+
+        h3, a {
+            display: block;
+            height: 4.3vh;
+            width: 10vw;
+            background: crimson;
+            color: white;
+            border-radius: 20px;
+            padding-left: 15px;
+            padding-top: 5px;
+           
+            
+        }
+
+       
+
+       #initial{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           padding: 2vw;
+           justify-content: space-between;
+           font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+       }
+
+       
+
+       ul li{
+           padding-bottom: 1vw;
+           color: rgb(255, 250, 251);
+       }
+
+      
+
+       
+
+
+
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="container" id="initial">
+        <h1>ECell Quiz</h1>
+        <p>
+            <ul>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum voluptatibus est doloribus, non facilis laboriosam impedit.</li>
+            <li>Vero voluptates odit nemo magni nam ratione assumenda corrupti cumque mollitia asperiores, iusto. Lorem ipsum dolor sit amet.</li>
+            <li>Consectetur adipisicing elit. Dolore itaque libero consequuntur magni doloremque tempora, distinctio eos harum evenie, soluta.</li>
+            <li>Eum delectus aperiam debitis quidem asperiores ipsa nihil sit.</li>
+            </ul>
+        </p>
+        <button onclick="start()">Start Quiz</button>
+    </div>
+    <div class="container" id="Q1">
+        <h2>Q1) What is 1+1?</h2>
+        <h3  id="ans1" onclick="change1()">2</h3>
+        <h3  class="wrong">1</h3>
+        <h3  class="wrong">3</h3>
+        <h3  class="wrong">4</h3>
+        <button onclick="next1()">Next Question</button>
+    </div>
+    <div class="container" id="Q2">
+        <h2>Q2)What is 2*5?</h2>
+        <h3  class="wrong">8</h3>
+        <h3  class="wrong">4</h3>
+        <h3  class="wrong">6</h3>
+        <h3  id="ans2" onclick="change2()">10</h3>
+        <button onclick="next2()">Next Question</button>
+    </div>
+    <div class="container" id="Q3">
+        <h2>Q3)What is 2/5?</h2>
+        <h3 class="wrong">0.8</h3>
+        <h3 id="ans3" onclick="change3()">0.4</h3>
+        <h3 class="wrong">0.6</h3>
+        <h3 class="wrong">0.25</h3>
+        <button onclick="next3()">Next Question</button>
+    </div>
+    <div class="container" id="Q4">
+        <h2>Q4)What is 2-5?</h2>
+        <h3 class="wrong">7</h3>
+        <h3 id="ans4" onclick="change4()">-3</h3>
+        <h3 class="wrong">3</h3>
+        <h3 class="wrong">-7</h3>
+        <button onclick="next4()">Next Question</button>
+    </div>
+    <div class="container" id="Q5">
+        <h2>Q5)What is (2+6)*2?</h2>
+        <h3 class="wrong">18</h3>
+        <h3 class="wrong">14</h3>
+        <h3 id="ans5" onclick="change5()">16</h3>
+        <h3 class="wrong">10</h3>
+        <button onclick="finish()">Finish</button>
+    </div>
+   
+    
+</body>
+<script>
+    function start(){
+        document.getElementById("initial").style.display="none";
+        document.getElementById("Q1").style.display="flex";
+    }
+
+    function next1(){
+        document.getElementById("Q1").style.display="none";
+        document.getElementById("Q2").style.display="flex";
+    }
+
+    function next2(){
+        document.getElementById("Q2").style.display="none";
+        document.getElementById("Q3").style.display="flex";
+    }
+
+    function next3(){
+        document.getElementById("Q3").style.display="none";
+        document.getElementById("Q4").style.display="flex";
+    }
+
+    function next4(){
+        document.getElementById("Q4").style.display="none";
+        document.getElementById("Q5").style.display="flex";
+    }
+
+    function finish(){
+        document.getElementById("Q5").style.display="none";
+        document.getElementById("initial").style.display="flex";
+    }
+
+    function change1(){
+        document.getElementsById("ans1").innerHTML="correct";
+    }
+
+    function change2(){
+        document.getElementsById("ans2").innerHTML="correct";
+    }
+
+    function change3(){
+        document.getElementsById("ans3").innerHTML="correct";
+    }
+
+    function change4(){
+        document.getElementsById("ans4").innerHTML="correct";
+    }
+
+    function change5(){
+        document.getElementsById("ans5").innerHTML="correct";
+    }
+
+
+
+
+</script>
+</html>
